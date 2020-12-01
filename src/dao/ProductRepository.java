@@ -7,9 +7,13 @@ import dto.Product;
 public class ProductRepository{
 	
 	private ArrayList<Product> listOfProducts = new ArrayList<Product>();
+	private static ProductRepository instance = new ProductRepository();
 	
-	public ProductRepository() {
-		
+	public static ProductRepository getInstance() {
+		return instance;
+		}
+	
+	public ProductRepository( ) {	
 		Product phone = new Product("p1234","iPhone 12", 1000000);
 		phone.setDescription("6.1-inch, 2532x1170 Super Retina XDR display, µà¾ó 12MP Ä«¸Þ¶ó");
 		phone.setCategory("Smart Phone");
@@ -51,5 +55,9 @@ public class ProductRepository{
 			}
 		}
 		return productById;
+	}
+	
+	public void addProduct(Product product) {
+		listOfProducts.add(product);
 	}
 }
