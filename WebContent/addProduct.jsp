@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=EUC-KR"%>
 <html>
 <head>
-<link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css"
 integrity="sha384-ggoyRoiXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <title>상품 등록</title>
@@ -14,7 +14,7 @@ integrity="sha384-ggoyRoiXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 		</div>
 	</div>
 	<div class="container">
-		<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post">
+		<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
 			<div class="form-group row">
 				<label class="col-sm-2">상품 코드</label>
 				<div class="col-sm-3">
@@ -67,6 +67,12 @@ integrity="sha384-ggoyRoiXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					중고제품
 					<input type="radio" name="condition" value="Refurbished " >
 					재생제품
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2">이미지</label>
+				<div class="col-sm-5">
+					<input type="file" name="productImage" class="form-control">
 				</div>
 			</div>
 			<div class="form-group row">
